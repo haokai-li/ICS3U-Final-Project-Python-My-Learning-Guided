@@ -70,7 +70,7 @@ def splash_scene():
 
     # loop
     while True:
-        # wait for 2 second
+        # wait for 1 second
         time.sleep(1.0)
         menu_scene()
 
@@ -86,7 +86,7 @@ def menu_scene():
     text1 = stage.Text(
         width=29, height=12, font=None, palette=constants.RED_PALETTE, buffer=None
     )
-    text1.move(20, 10)
+    text1.move(30, 10)
     text1.text("MT FINAL Game")
     text.append(text1)
 
@@ -316,6 +316,7 @@ def game_scene():
                     fires[fire_number].move(
                         constants.OFF_SCREEN_X, constants.OFF_SCREEN_Y
                     )
+                    show_fire()
                     show_fire()
                     score += 1
                     score_text.clear()
