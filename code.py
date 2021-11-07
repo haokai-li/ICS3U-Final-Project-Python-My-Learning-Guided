@@ -87,7 +87,7 @@ def menu_scene():
         width=29, height=12, font=None, palette=constants.RED_PALETTE, buffer=None
     )
     text1.move(20, 10)
-    text1.text("MT Game Studios")
+    text1.text("MT FINAL Game")
     text.append(text1)
 
     text2 = stage.Text(
