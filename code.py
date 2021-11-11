@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Created by: Haokai Li
-# Created on: Oct 2021
+# Created on: Nov 2021
 # This Program is about pybadge
 
 import ugame
@@ -241,7 +241,7 @@ def game_scene():
         if keys & ugame.K_O != 0:
             if a_button == constants.button_state["button_up"]:
                 a_button = constants.button_state["button_still_pressed"]
-                ship.move(ship.x, ship.y - 40)
+                ship.move(ship.x, ship.y - constants.FORWARD_Y)
         else:
             if a_button == constants.button_state["button_still_pressed"]:
                 a_button = constants.button_state["button_released"]
@@ -291,9 +291,9 @@ def game_scene():
             pass
 
         # update game logic
-        # forwoard
+        # forward
         if a_button == constants.button_state["button_released"]:
-            ship.move(ship.x, ship.y + 40)
+            ship.move(ship.x, ship.y + constants.FORWARD_Y)
 
         # ship move
         if ship_address == 0:
@@ -344,7 +344,7 @@ def game_scene():
                     show_fire()
                     show_fire()
                     sound.stop()
-                    sound.play(crash_sound)
+                    sound.play(boom_sound)
                     game_life = game_life - 1
                     game_life_text.clear()
                     game_life_text.cursor(0, 0)
@@ -358,7 +358,7 @@ def game_scene():
                                 )
                         ship.move(constants.OFF_SCREEN_X, constants.OFF_SCREEN_Y)
                         sound.stop()
-                        sound.play(boom_sound)
+                        sound.play(crash_sound)
                         score_text.clear()
                         game_life_text.clear()
                         game_over_text.clear()
